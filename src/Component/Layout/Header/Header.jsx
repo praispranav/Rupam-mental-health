@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import logo from '../../../Assests/Logo.png';
@@ -12,6 +12,7 @@ const Header = () => {
   });
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
+  const modalRef = useRef(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -39,14 +40,14 @@ const Header = () => {
       toast.error("Please complete all required fields before booking your consultation.");
       return;
     }
-  
+
     setErrors({});
     setLoading(true);
-  
+
     setTimeout(() => {
       const existingDataRaw = localStorage.getItem('consultationForm');
       let existingData = [];
-  
+
       if (existingDataRaw) {
         try {
           existingData = JSON.parse(existingDataRaw);
@@ -54,24 +55,28 @@ const Header = () => {
           existingData = [];
         }
       }
-  
+
       if (!Array.isArray(existingData)) {
         existingData = [];
       }
-  
+
       existingData.push(formData);
       localStorage.setItem('consultationForm', JSON.stringify(existingData));
-  
+
       setLoading(false);
       toast.success("Your consultation request has been submitted! A doctor will contact you soon.");
       setFormData({ name: '', email: '', date: '', issue: '' });
+
+      // Close the modal
+      const modal = window.bootstrap?.Modal.getInstance(modalRef.current);
+      if (modal) modal.hide();
+      window.location.reload();
+
     }, 2000);
   };
-  
 
   return (
     <div>
-
       <section id="header">
         <nav className="navbar navbar-expand-md navbar-light bg_light p-0" id="navbar_sticky">
           <div className="container-xl">
@@ -134,8 +139,9 @@ const Header = () => {
         tabIndex="-1"
         aria-labelledby="consultationModalLabel"
         aria-hidden="true"
+        ref={modalRef}
       >
-        <div className="modal-dialog  modal-dialog-centered">
+        <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="consultationModalLabel">
@@ -188,7 +194,6 @@ const Header = () => {
                     min={new Date().toISOString().split("T")[0]}
                     onChange={handleChange}
                     disabled={loading}
-                    date
                   />
                   {errors.date && <div className="invalid-feedback">{errors.date}</div>}
                 </div>

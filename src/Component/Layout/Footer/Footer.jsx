@@ -114,12 +114,12 @@ const Footer = () => {
                 <div className="container-xl">
                     <div className="footer_b1 row text-center">
                         <div className="col-md-12">
-                            <p className="mb-0 text-light">
+                            {/* <p className="mb-0 text-light">
                                 © 2025 Mental Health Org. All Rights Reserved | Design by{" "}
                                 <a className="col_brown fw-bold" href="https://sahilstm.netlify.app/" target="_blank" rel="noopener noreferrer">
                                     Sahil
                                 </a>
-                            </p>
+                            </p> */}
                         </div>
                     </div>
                 </div>
