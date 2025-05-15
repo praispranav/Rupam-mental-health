@@ -91,7 +91,7 @@ const Footer = () => {
                                                 Supporting thousands in their mental health journey.
                                             </p>
                                             <h6 className="mt-4 text-light">
-                                                <i className="fa fa-map-marker col_brown me-2 fs-4 align-middle"></i> Rupam Kumari
+                                                <i className="fa fa-user col_brown me-2 fs-4 align-middle"></i> Rupam Kumari
                                             </h6>
                                             <h6 className="mt-4 text-light">
                                                 <i className="fa fa-map-marker col_brown me-2 fs-4 align-middle"></i> Patna, Bihar
