@@ -1,0 +1,146 @@
+// Mental health friendly light background
+.bg-mental-light {
+  background: #e6f0f3;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+}
+
+.group-discussion {
+  .groups-list {
+    width: 280px;
+    max-height: 70vh;
+    overflow-y: auto;
+
+    .list-group-item {
+      font-weight: 600;
+      font-size: 1.05rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .list-group-item.active {
+      background-color: #28a745; // Bootstrap success green
+      border-color: #28a745;
+      color: white;
+      box-shadow: 0 0 8px #28a745aa;
+    }
+  }
+
+  .chat-area {
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+
+    .messages {
+      scrollbar-width: thin;
+      scrollbar-color: #b2d8c4 transparent;
+
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #7fcf7f;
+        border-radius: 6px;
+      }
+    }
+
+    .message {
+      max-width: 70%;
+      word-wrap: break-word;
+
+      &.message-sent {
+        margin-left: auto;
+        background-color: #d4edda;
+        color: #155724;
+        box-shadow: 0 2px 5px rgba(37, 132, 37, 0.2);
+      }
+      &.message-received {
+        margin-right: auto;
+        background-color: #f8d7da;
+        color: #721c24;
+        box-shadow: 0 2px 5px rgba(183, 41, 41, 0.2);
+      }
+
+      .sender {
+        font-size: 0.9rem;
+      }
+      .message-text {
+        margin-top: 0.3rem;
+        font-size: 1rem;
+      }
+      small {
+        display: block;
+        margin-top: 0.3rem;
+        font-size: 0.75rem;
+      }
+    }
+  }
+
+  input.form-control {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+
+  button.btn-success {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+.group-discussion {
+  flex-direction: row;
+
+  .groups-list {
+    width: 280px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .chat-area {
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  // 📱 Mobile Responsive Design
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    .groups-list {
+      width: 100%;
+      margin-right: 0 !important;
+      margin-bottom: 1rem;
+    }
+
+    .chat-area {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .message {
+      max-width: 90%;
+
+      &.message-sent,
+      &.message-received {
+        font-size: 0.9rem;
+      }
+
+      .sender,
+      .message-text,
+      small {
+        font-size: 0.8rem;
+      }
+    }
+
+    input.form-control {
+      font-size: 0.9rem;
+    }
+
+    button.btn-success {
+      font-size: 0.9rem;
+    }
+  }
+}

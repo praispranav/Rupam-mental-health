@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import logo from '../../../Assests/Logo.png';
@@ -13,6 +14,7 @@ const Header = () => {
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const modalRef = useRef(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -75,6 +77,19 @@ const Header = () => {
     }, 2000);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("login");
+    setIsLoggedIn(false);
+    toast.success("You have been logged out.");
+    window.location.href = "/";
+  };
+
+
+  useEffect(() => {
+    const loggedIn = localStorage.getItem("login") === "true";
+    setIsLoggedIn(loggedIn);
+  }, []);
+
   return (
     <div>
       <section id="header">
@@ -111,13 +126,34 @@ const Header = () => {
                     Contact
                   </a>
                 </li>
+                <li className="nav-item">
+                <a className="nav-link" href="/group-discussion">
+                Discussion
+                </a>
+              </li>
+                {isLoggedIn && (
+                  <li className="nav-item">
+                    <a className="nav-link" href="/dashboard">
+                      Go to Dashboard
+                    </a>
+                  </li>
+                )}
+
               </ul>
               <ul className="navbar-nav mb-0 ms-auto">
-                <li className="nav-item">
-                  <a className="nav-link" href="/login">
-                    Login as administrator
-                  </a>
-                </li>
+                {isLoggedIn ? (
+                  <li className="nav-item">
+                    <button className="nav-link btn btn-link text-danger" onClick={handleLogout}>
+                      Logout
+                    </button>
+                  </li>
+                ) : (
+                  <li className="nav-item">
+                    <a className="nav-link" href="/login">
+                      Login as administrator
+                    </a>
+                  </li>
+                )}
                 <li className="nav-item">
                   <button
                     className="button_1"
