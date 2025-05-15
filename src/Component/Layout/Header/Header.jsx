@@ -101,9 +101,9 @@ const Header = () => {
                             </div>
                         </div>
 
-            <a className="col_brown navbar-brand p-0 fw-bold me-5" href="/">
+            {/* <a className="col_brown navbar-brand p-0 fw-bold me-5" href="/">
               <img src={logo} alt="logo" style={{ height: '40px' }} />
-            </a>
+            </a> */}
             <button
               className="navbar-toggler"
               type="button"
