@@ -30,7 +30,7 @@ const Nav = () => {
                                     <div className="col-md-4">
                                         <div className="top_1ri1">
                                             <span className="d-inline-block text-center border_1 span_1 rounded-circle float-start me-2"><i className="fa fa-map-marker"></i></span>
-                                            <h6 className="font_14 mb-0"><span className="span_2 fw-bold d-inline-block mb-1">Our Location</span> <br /> 634 Semper Porta</h6>
+                                            <h6 className="font_14 mb-0"><span className="span_2 fw-bold d-inline-block mb-1">Our Location</span> <br /> Patna, Bihar</h6>
                                         </div>
                                     </div>
                                 </div>

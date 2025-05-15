@@ -91,13 +91,16 @@ const Footer = () => {
                                                 Supporting thousands in their mental health journey.
                                             </p>
                                             <h6 className="mt-4 text-light">
-                                                <i className="fa fa-map-marker col_brown me-2 fs-4 align-middle"></i> 123 Wellness St, Healthy City, USA
+                                                <i className="fa fa-user col_brown me-2 fs-4 align-middle"></i> Rupam Kumari
                                             </h6>
                                             <h6 className="mt-4 text-light">
-                                                <i className="fa fa-phone col_brown me-2 fs-4 align-middle"></i> +1 (800) 123-4567
+                                                <i className="fa fa-map-marker col_brown me-2 fs-4 align-middle"></i> Patna, Bihar
+                                            </h6>
+                                            <h6 className="mt-4 text-light">
+                                                <i className="fa fa-phone col_brown me-2 fs-4 align-middle"></i> +91 880123-4567
                                             </h6>
                                             <h6 className="mt-4 text-light mb-0">
-                                                <i className="fa fa-envelope col_brown me-2 fs-4 align-middle"></i> contact@mentalhealth.org
+                                                <i className="fa fa-envelope col_brown me-2 fs-4 align-middle"></i> contact@apnapan.org
                                             </h6>
                                         </div>
                                     </div>
