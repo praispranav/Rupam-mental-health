@@ -164,6 +164,7 @@ import FloatingChatbot from "./Component/FloatingChatbot/FloatingChatbot";
 import Login from "./Pages/Auth/Login/Login";
 import Signup from "./Pages/Auth/Signup/Singup";
 import Dashboard from "./Pages/Dashboard/Dashboard";
+import GroupDiscussion from "./Pages/GroupChat/GroupDiscussion";
 
 const AppContent = () => {
   const location = useLocation();
@@ -183,6 +184,7 @@ const AppContent = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<Signup />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/group-discussion" element={<GroupDiscussion />} />
       </Routes>
 
       {!isAuthPage && <Footer />}

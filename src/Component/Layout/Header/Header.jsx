@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import logo from '../../../Assests/Logo.png';
@@ -12,6 +12,7 @@ const Header = () => {
   });
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -39,14 +40,14 @@ const Header = () => {
       toast.error("Please complete all required fields before booking your consultation.");
       return;
     }
-  
+
     setErrors({});
     setLoading(true);
-  
+
     setTimeout(() => {
       const existingDataRaw = localStorage.getItem('consultationForm');
       let existingData = [];
-  
+
       if (existingDataRaw) {
         try {
           existingData = JSON.parse(existingDataRaw);
@@ -54,20 +55,32 @@ const Header = () => {
           existingData = [];
         }
       }
-  
+
       if (!Array.isArray(existingData)) {
         existingData = [];
       }
-  
+
       existingData.push(formData);
       localStorage.setItem('consultationForm', JSON.stringify(existingData));
-  
+
       setLoading(false);
       toast.success("Your consultation request has been submitted! A doctor will contact you soon.");
       setFormData({ name: '', email: '', date: '', issue: '' });
     }, 2000);
   };
-  
+
+  const handleLogout = () => {
+    localStorage.removeItem("login");
+    setIsLoggedIn(false);
+    toast.success("You have been logged out.");
+    window.location.href = "/";
+  };
+
+
+  useEffect(() => {
+    const loggedIn = localStorage.getItem("login") === "true";
+    setIsLoggedIn(loggedIn);
+  }, []);
 
   return (
     <div>
@@ -106,13 +119,34 @@ const Header = () => {
                     Contact
                   </a>
                 </li>
+                <li className="nav-item">
+                <a className="nav-link" href="/group-discussion">
+                Discussion
+                </a>
+              </li>
+                {isLoggedIn && (
+                  <li className="nav-item">
+                    <a className="nav-link" href="/dashboard">
+                      Go to Dashboard
+                    </a>
+                  </li>
+                )}
+
               </ul>
               <ul className="navbar-nav mb-0 ms-auto">
-                <li className="nav-item">
-                  <a className="nav-link" href="/login">
-                    Login as administrator
-                  </a>
-                </li>
+                {isLoggedIn ? (
+                  <li className="nav-item">
+                    <button className="nav-link btn btn-link text-danger" onClick={handleLogout}>
+                      Logout
+                    </button>
+                  </li>
+                ) : (
+                  <li className="nav-item">
+                    <a className="nav-link" href="/login">
+                      Login as administrator
+                    </a>
+                  </li>
+                )}
                 <li className="nav-item">
                   <button
                     className="button_1"

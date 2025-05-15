@@ -39,6 +39,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container">
+    <div className='container'>
       <header className="dashboard-header">
         <h1 className="dashboard-title">Dashboard Overview</h1>
         <p className="dashboard-subtitle">Manage bookings, doctors, and messages efficiently</p>
@@ -67,7 +68,14 @@ const Dashboard = () => {
           <p>{contactMessages.length}</p>
         </div>
       </div>
-
+      <div style={{display:'flex', alignItems:"center", justifyContent:"flex-end", marginBottom:'20px'}}>
+      <a
+      href='/'
+      className="button_1"
+      >
+      Go to home page
+      </a>
+      </div>
       <div className="tables-container">
         <div className="table-box">
           <h3>Consultation Booking List</h3>
@@ -76,9 +84,7 @@ const Dashboard = () => {
               <tr>
                 <th>Type</th>
                 <th>Patient</th>
-                <th>Email</th>
                 <th>Date</th>
-                <th>Issue</th>
                 <th>Status</th>
                 <th>Action</th>
               </tr>
@@ -88,9 +94,7 @@ const Dashboard = () => {
                 <tr key={booking.id}>
                   <td>{booking.name}</td>
                   <td>{booking.patient}</td>
-                  <td>{booking.email}</td>
                   <td>{booking.date}</td>
-                  <td>{booking.issue}</td>
                   <td>
                     <span className={`badge ${booking.status === 'Pending' ? 'bg-warning text-dark' : 'bg-success'}`}>
                       {booking.status}
@@ -105,7 +109,7 @@ const Dashboard = () => {
                         setSelectedBooking(booking);
                         setSelectedIndex(index);
                       }}
-                      disabled={booking.status === 'Resolved'}
+                      // disabled={booking.status === 'Resolved'}
                       title={booking.status === 'Resolved' ? 'Already Resolved' : 'View'}
                     >
                       <i className="bi bi-eye"></i> View
@@ -280,6 +284,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
