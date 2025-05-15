@@ -95,6 +95,12 @@ const Header = () => {
       <section id="header">
         <nav className="navbar navbar-expand-md navbar-light bg_light p-0" id="navbar_sticky">
           <div className="container-xl">
+          <div className="col-md-1">
+                            <div className="top_1l">
+                                <img src={logo} alt='logo' style={{ height: "40px" }} />
+                            </div>
+                        </div>
+
             <a className="col_brown navbar-brand p-0 fw-bold me-5" href="/">
               <img src={logo} alt="logo" style={{ height: '40px' }} />
             </a>
