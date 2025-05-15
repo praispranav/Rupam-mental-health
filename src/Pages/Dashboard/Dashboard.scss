@@ -1,0 +1,220 @@
+.dashboard-container {
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2c3e50;
+  
+    .dashboard-header {
+      text-align: center;
+      margin-bottom: 3rem;
+  
+      .dashboard-title {
+        font-size: 3rem;
+        font-weight: 900;
+        letter-spacing: 1.5px;
+        color: #1a2a6c;
+        position: relative;
+        display: inline-block;
+        margin-bottom: 0.5rem;
+  
+        &::after {
+          content: '';
+          width: 60px;
+          height: 4px;
+          background: #667eea;
+          display: block;
+          margin: 0.75rem auto 0;
+          border-radius: 2px;
+        }
+      }
+  
+      .dashboard-subtitle {
+        font-size: 1.2rem;
+        color: #475569;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+      }
+    }
+  
+    .cards-row {
+      display: flex;
+      gap: 2.5rem;
+      margin-bottom: 3.5rem;
+      justify-content: center;
+  
+      .card-box {
+        flex: 1;
+        max-width: 300px;
+        color: white;
+        padding: 2.5rem 2rem;
+        border-radius: 18px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+  
+        &:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.18);
+        }
+  
+        .card-icon {
+          font-size: 2.5rem;
+          margin-bottom: 1rem;
+          color: rgba(255, 255, 255, 0.85);
+        }
+  
+        h4 {
+          font-size: 1.5rem;
+          margin-bottom: 0.75rem;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          font-weight: 700;
+          color: #fff;
+        }
+  
+        p {
+          font-size: 3.25rem;
+          font-weight: 900;
+          margin: 0;
+          letter-spacing: 0.15em;
+          color: #fff;
+        }
+      }
+  
+      .card-box:nth-child(1) {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+      }
+      .card-box:nth-child(2) {
+        background: linear-gradient(135deg, #f6d365, #fda085);
+        box-shadow: 0 15px 30px rgba(246, 211, 101, 0.4);
+      }
+      .card-box:nth-child(3) {
+        background: linear-gradient(135deg, #43cea2, #185a9d);
+        box-shadow: 0 15px 30px rgba(67, 206, 162, 0.4);
+      }
+    }
+  
+    .tables-container {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+  
+      .table-box {
+        background: white;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  
+        h3 {
+          font-size: 1.6rem;
+          margin-bottom: 1.5rem;
+          font-weight: 700;
+          color: #444;
+          border-left: 5px solid #667eea;
+          padding-left: 12px;
+        }
+  
+        /* Make table horizontally scrollable on small devices */
+        overflow-x: auto;
+  
+        table {
+          width: 100%;
+          border-collapse: separate;
+          border-spacing: 0 12px;
+          min-width: 600px; /* ensures table is scrollable on narrow devices */
+  
+          thead {
+            th {
+              text-align: left;
+              padding: 12px 16px;
+              font-weight: 700;
+              font-size: 1rem;
+              color: #555;
+              border-bottom: 2px solid #e0e0e0;
+            }
+          }
+  
+          tbody {
+            tr {
+              background: #f9fafc;
+              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+              border-radius: 12px;
+              transition: background-color 0.2s ease;
+  
+              &:hover {
+                background-color: #e6eefc;
+              }
+  
+              td {
+                padding: 14px 16px;
+                font-size: 1rem;
+                color: #444;
+                vertical-align: middle;
+                white-space: nowrap; /* Prevent breaking text in small cells */
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      padding: 2rem 1rem;
+  
+      .dashboard-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+  
+      .cards-row {
+        flex-direction: column;
+  
+        .card-box {
+          width: 100%; /* Full width cards on mobile */
+          margin-bottom: 1.5rem;
+  
+          h4 {
+            font-size: 1.2rem;
+          }
+  
+          p {
+            font-size: 2.5rem;
+          }
+        }
+      }
+  
+      .tables-container {
+        gap: 2rem;
+  
+        .table-box {
+          padding: 1rem;
+  
+          h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+          }
+  
+          table {
+            min-width: unset; /* remove min-width for smaller devices */
+            font-size: 0.9rem;
+  
+            thead th {
+              padding: 8px 12px;
+              font-size: 0.9rem;
+            }
+  
+            tbody td {
+              padding: 10px 12px;
+              font-size: 0.9rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  

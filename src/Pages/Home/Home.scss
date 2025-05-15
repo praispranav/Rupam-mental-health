@@ -1,0 +1,9 @@
+@import '../../Styles/variables';
+@import '../../Styles/mixins';
+
+.home-container {
+  @include flex-center;
+  background-color: $primary-color;
+  color: white;
+  height: 100vh;
+}

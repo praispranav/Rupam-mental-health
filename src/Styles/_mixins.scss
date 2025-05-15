@@ -1,0 +1,64 @@
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @mixin flex-column($gap: 0) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+  }
+  
+  @mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+
+  $breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+@mixin respond($breakpoint) {
+  @media (max-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+@mixin text-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  @mixin box-shadow($color: rgba(0, 0, 0, 0.1), $blur: 10px) {
+    box-shadow: 0 4px $blur $color;
+  }
+  
+  @mixin box-shadow($color: rgba(0, 0, 0, 0.1), $blur: 10px) {
+    box-shadow: 0 4px $blur $color;
+  }
+  @mixin aspect-ratio($width, $height) {
+    position: relative;
+    padding-bottom: calc($height / $width * 100%);
+    height: 0;
+  
+    > * {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+  @mixin absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
