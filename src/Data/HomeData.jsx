@@ -105,54 +105,57 @@ export const courseData = [
       image: therapist2
     },
   ];
+  
+
 
   export const testimonials = [
     {
-      name: 'Alice Johnson',
+      name: 'Neha Joshi',
       position: 'Counselor',
       message:
         'This organization has been a beacon of hope in my life. Their compassionate approach and dedicated team helped me overcome challenges I never thought I could face. Thanks to their support, I now feel empowered and more resilient than ever before.',
     },
     {
-      name: 'Michael Lee',
+      name: 'Rohit Iyer',
       position: 'Therapist',
       message:
         'The counseling services offered here are truly exceptional. The environment is safe and nurturing, allowing me to explore my feelings without fear or judgment. Their programs gave me the tools I needed to manage anxiety and regain control over my life.',
     },
     {
-      name: 'Sarah Williams',
+      name: 'Sonal Patil',
       position: 'Volunteer',
       message:
         'Volunteering with this organization has been one of the most rewarding experiences of my life. Witnessing the positive transformations in individuals and families inspired me daily. Their holistic approach to mental health fosters genuine healing and community support.',
     },
     {
-      name: 'David Smith',
+      name: 'Amit Singh',
       position: 'Patient',
       message:
         'Before joining this program, I struggled with constant worry and stress that affected my daily life. The therapies and group sessions provided a lifeline, helping me understand my emotions and develop healthier coping mechanisms. I am grateful for this second chance.',
     },
     {
-      name: 'Emily Brown',
+      name: 'Dr. Radhika Nair',
       position: 'Psychologist',
       message:
         'This organization combines evidence-based practices with heartfelt care, creating a unique space for recovery and growth. As a professional, I admire their dedication to making mental health resources accessible to everyone in need.',
     },
     {
-      name: 'James Wilson',
+      name: 'Manish Desai',
       position: 'Social Worker',
       message:
         'Providing support to vulnerable populations is challenging, but this organization’s collaborative spirit and innovative programs make a real difference. Their emphasis on community engagement and education helps break down stigma and promotes wellness.',
     },
     {
-      name: 'Olivia Martinez',
+      name: 'Pooja Malhotra',
       position: 'Patient',
       message:
         'The community I found here gave me strength and a sense of belonging during my darkest moments. The counseling, workshops, and peer support groups were instrumental in my recovery journey. I now approach life with renewed hope and confidence.',
     },
     {
-      name: 'Daniel Taylor',
+      name: 'Karan Bhatia',
       position: 'Support Staff',
       message:
         'Working here has shown me the incredible resilience of the human spirit. Every day I see people transform their lives through compassion, understanding, and the right guidance. It’s an honor to be part of a team that truly cares about mental wellness.',
     },
   ];
+  
